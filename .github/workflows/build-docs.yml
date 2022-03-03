@@ -25,7 +25,7 @@ jobs:
     - name: Build the Solution
       run: msbuild InSite_test.sln /p:Configuration=Release
         
-  deploy-docs:#
+  deploy-docs:
     name: Deploy Docs
     needs: [build]
     runs-on: ubuntu-latest
