@@ -32,10 +32,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
     
     - name: Restore NuGet packages
-      run: nuget restore InSite_test.sln
+      run: nuget restore Source\InSite_test.sln
     
     - name: Build the Solution
-      run: msbuild InSite_test.sln /p:Configuration=Release
+      run: msbuild Source\InSite_test.sln /p:Configuration=Release
         
   deploy-docs:
     name: Deploy Docs
