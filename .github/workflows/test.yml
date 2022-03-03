@@ -32,28 +32,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
     
     - name: Restore NuGet packages
-      run: nuget restore Test_DocFXPublishTest.sln
+      run: nuget restore InSite_test.sln
     
     - name: Build the Solution
-      run: msbuild Test_DocFXPublishTest.sln /p:Configuration=Release
-      
-    #- name: Setup DocFX
-    #  uses: crazy-max/ghaction-chocolatey@v1
-    #  with:
-    #    args: install docfx
-
-    #- name: DocFX Build
-    #  #working-directory: docs
-    #  run: docfx docfx_project/docfx.json
-    #  continue-on-error: false
-
-    #- name: Publish
-    #  if: github.event_name == 'push'
-    #  uses: peaceiris/actions-gh-pages@v3
-    #  with:
-    #    github_token: ${{ secrets.GITHUB_TOKEN }}
-    #    publish_dir: docs
-    #    force_orphan: true
+      run: msbuild InSite_test.sln /p:Configuration=Release
         
   deploy-docs:
     name: Deploy Docs
